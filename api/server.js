@@ -1,20 +1,23 @@
 'use strict'
 
-const Hapi = require('hapi')
+const hapi = require('hapi')
+const config = require('./config/config')
+const routes = require('./routes/routes')
 
-const server = Hapi.server({
-    port: 3000,
-    host: 'localhost'
+const server = hapi.server({
+    port: config.port
 })
 
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: (request, h) => {
-      const data = { message: 'Hello from Hapijs'}
-      return h.response(data).code(200)
-  }
-})
+server.route(routes)
+
+// server.route({
+//   method: 'GET',
+//   path: '/',
+//   handler: (request, h) => {
+//       const data = { message: 'Hello from Hapijs'}
+//       return h.response(data).code(200)
+//   }
+// })
 
 const init = async () => {
 

@@ -1,9 +1,16 @@
 'use strict'
 
+const imageModel = require('../models/image')
 const imageController = {}
+
 
 imageController.AddImage = async (request, h) => {
   const data = { message: 'Hello from Hapijs' }
+
+  // imageModel.save().then(() => {
+  //   res.redirect('/posts', next)
+  // })
+
   return h.response(data).code(200)
 }
 
@@ -22,6 +29,4 @@ imageController.DeleteImage = async (request, h) => {
   return h.response(data).code(200)
 }
 
-
-
-modules.exports = imageController
+module.exports = imageController
