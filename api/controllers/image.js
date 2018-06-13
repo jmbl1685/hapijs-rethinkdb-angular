@@ -3,20 +3,18 @@
 const imageModel = require('../models/image')
 const imageController = {}
 
-
 imageController.AddImage = async (request, h) => {
-  const data = { message: 'Hello from Hapijs' }
+  const image = new imageModel({
+    url: request.payload.url
+  })
 
-  // imageModel.save().then(() => {
-  //   res.redirect('/posts', next)
-  // })
-
-  return h.response(data).code(200)
+  const response = await image.save()
+  return h.response(response).code(200)
 }
 
 imageController.GetImage = async (request, h) => {
-  const data = { message: 'Hello from Hapijs' }
-  return h.response(data).code(200)
+  const response = await imageModel.run()
+  return h.response(response).code(200)
 }
 
 imageController.UpdateImage = async (request, h) => {
