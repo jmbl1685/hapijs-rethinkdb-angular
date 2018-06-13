@@ -7,4 +7,4 @@ const image = thinky.createModel("Image", {
     createdAt: type.date().default(Date.now())
 })
 
-module.exports = image;
+module.exports = image
