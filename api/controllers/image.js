@@ -3,7 +3,7 @@
 const imageModel = require('../models/image')
 const imageController = {}
 
-imageController.AddImage = async (request, reply) => {
+imageController.AddImage = async (request, h) => {
 
   try {
 
