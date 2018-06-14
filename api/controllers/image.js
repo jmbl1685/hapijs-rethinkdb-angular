@@ -1,5 +1,6 @@
 'use strict'
 
+const config = require('../config/config')
 const imageModel = require('../models/image')
 const imageController = {}
 
@@ -59,33 +60,38 @@ imageController.DeleteImage = async (request, h) => {
   }
 }
 
+
 module.exports = [
   {
       method: 'POST',
       path: '/image',
       options: {
-          handler: imageController.AddImage
+          handler: imageController.AddImage,
+          cors: config.cors 
       }
   },
   {
       method: 'GET',
       path: '/image',
       options: {
-          handler: imageController.GetImage
-      }
+          handler: imageController.GetImage,
+          cors: config.cors         
+      }    
   },
   {
       method: 'PUT',
       path: '/image/{id}',
       options: {
-          handler: imageController.UpdateImage
+          handler: imageController.UpdateImage,
+          cors: config.cors 
       }
   },
   {
       method: 'DELETE',
       path: '/image/{id}',
       options: {
-          handler: imageController.DeleteImage
+          handler: imageController.DeleteImage,
+          cors: config.cors 
       }
   }
 ]
