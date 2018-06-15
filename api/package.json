@@ -12,6 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cloudinary": "^1.11.0",
+    "formidable": "^1.2.1",
     "hapi": "^17.5.1",
     "thinky": "^2.3.9"
   },

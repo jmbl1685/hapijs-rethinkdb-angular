@@ -11,7 +11,14 @@ const cors = {
     credentials: true
 }
 
+const cloudinaryCredentials = {
+    cloud_name: 'your_cloud_name',
+    api_key: 'your_key',
+    api_secret: 'your_secret'
+}
+
 module.exports = {
+    cloudinaryCredentials,
     port: 3000,
     cors
 }
