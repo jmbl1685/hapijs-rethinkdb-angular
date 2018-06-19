@@ -12,9 +12,9 @@ const cors = {
 }
 
 const cloudinaryCredentials = {
-    cloud_name: 'your_cloud_name',
-    api_key: 'your_key',
-    api_secret: 'your_secret'
+    cloud_name: 'xxx',
+    api_key: 'xxx',
+    api_secret: 'xxx'
 }
 
 module.exports = {
